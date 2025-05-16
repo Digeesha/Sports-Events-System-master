@@ -66,11 +66,7 @@ Book a new sports event by selecting home/away teams, date/time, and match detai
 
 ### 🏆 Create Division
 
-### ⚡ Reactive Rendering
 
-### ⚠️ Error Popups
-
-### ✅ Input Validation
 
 ---
 
