@@ -1,0 +1,61 @@
+<div class="mt-5 mb-2 flex justify-between">
+  <div class="event-info">
+    <div class="info-row" [ngClass]="{ 'column-layout': isFirst }">
+      @if(isFirst){
+        <strong>Date </strong>
+      }
+      <button class="pill pill-date">{{ eventRequest?.date }}</button>
+    </div>
+    <div class="info-row" [ngClass]="{ 'column-layout': isFirst }">
+      @if(isFirst){
+        <strong> Requester Name </strong>
+      }
+
+      {{ eventRequest?.requesterName}}
+    </div>
+    <div class="info-row" [ngClass]="{ 'column-layout': isFirst }">
+      @if(isFirst){
+        <strong> Home Team </strong>
+      }
+
+        {{ eventRequest?.homeTeam?.name }}
+      </div>
+
+    <div class="info-row" [ngClass]="{ 'column-layout': isFirst }">
+      @if(isFirst){
+        <strong> Away Team </strong>
+      }
+
+        {{ eventRequest?.awayTeam?.name }}
+      </div>
+
+    <div class="info-row" [ngClass]="{ 'column-layout': isFirst }">
+      @if(isFirst){
+        <strong>Stadium </strong>
+      }
+      <div class="pill pill-stadium">{{ eventRequest?.stadium?.name }}</div>
+    </div>
+
+  </div>
+
+  <div class="btn-container" [ngClass]="{ 'align-items-center': isFirst }">
+    <button
+      mat-raised-button
+      class="action-btns info-btn"
+      (click)="openDetailModal()"
+      [ngClass]="{ 'btn-info-size': isFirst }"
+    >
+      More Info
+    </button>
+    <button
+      mat-raised-button
+      class="action-btns icn-btn"
+      (click)="deleteEventRequest()"
+      [ngClass]="{ 'btn-icn-size': isFirst }"
+    >
+      <img src="assets/icons/delete-icon.svg" alt="" class="size-6" />
+
+    </button>
+  </div>
+</div>
+<br />

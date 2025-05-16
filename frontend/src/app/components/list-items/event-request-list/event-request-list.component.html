@@ -1,0 +1,24 @@
+<!-- Conditional rendering -->
+@if(eventRequest.length == 0){
+<div>
+  <p class="text-gray-400 text-center text-2xl mt-5 mb-5">There aren't existing eventRequest.</p>
+</div>
+}@else {
+<!-- Order list by date -->
+<div class="orderByBtns text-center">
+  <button (click)="toggleOrderBy()">
+    Sort events by Date{{ orderByRecent ? " (Newest)" : " (Oldest)" }}
+  </button>
+</div>
+
+
+<div class="event-lst mt-12">
+  @for (singleEventRequest of eventRequest; track singleEventRequest.uuid) {
+  <app-event-request-item
+    [eventRequest]="singleEventRequest"
+    (refreshEventRequests)="refreshEventRequest()"
+    [isFirst]="singleEventRequest === eventRequest[0]"
+  ></app-event-request-item>
+  }
+</div>
+}
